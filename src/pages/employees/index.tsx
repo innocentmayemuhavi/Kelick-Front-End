@@ -6,9 +6,9 @@ import addUser from "../../assets/images/add-user.svg";
 import { PrimaryButton, SecondaryButton } from "../../components/buttons";
 import Overlay from "../../components/overlay";
 import { UploadFiles } from "../../components/modals";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { CoreContext } from "../../context/core-context";
-import { getEmployees } from "../../services";
+
 import { SpinnerCircularFixed } from "spinners-react";
 import Table from "../../components/table";
 import Avatar from "../../components/avatar";
@@ -72,6 +72,7 @@ const EmployeesPage = () => {
             <UploadFiles
               toogleShow={() => {
                 setShowUpload(false);
+                setIsFetching((prev) => !prev);
               }}
             />
             {/* <SideBar /> */}

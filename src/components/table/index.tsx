@@ -1,7 +1,6 @@
 import React from "react";
-import sortIcon from "../../assets/icons/d-arrow.svg";
+
 import styled from "styled-components";
-import Avatar from "../avatar";
 
 const StyledTable = styled.div`
   border-radius: var(--radi-6);

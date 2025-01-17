@@ -43,6 +43,7 @@ const StyledSuccessModal = styled.div`
 `;
 
 const AddSuccessModal = ({ isOpen, onClose }: AddSuccessModalProps) => {
+  console.log(isOpen);
   return (
     <StyledSuccessModal onClick={onClose}>
       <Confetti width={useWindowSize().width} height={useWindowSize().height} />

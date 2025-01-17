@@ -8,7 +8,7 @@ import { useDropzone } from "react-dropzone";
 import { PrimaryButton, SecondaryButton, TextButton } from "../buttons";
 import { generateFileFromData, getEmployees } from "../../services";
 import toast from "react-hot-toast";
-import { read, utils, WorkBook } from "xlsx";
+// import { read, WorkBook } from "xlsx";
 import { useContext, useState } from "react";
 import { CoreContext } from "../../context/core-context";
 import { IEmployees } from "../../models";
@@ -125,7 +125,7 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
   const { employees, setEmployees, setLoading } = useContext(CoreContext);
   const [isUploading, setIsUploading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const [files, setFiles] = useState<File[]>([]);
+  // const [files, setFiles] = useState<File[]>([]);
   const [progress, setProgress] = useState<number>(0);
 
   const onDrop = async (acceptedFiles: File[]) => {
@@ -136,7 +136,7 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
       toast.error("Some files were too large and were not accepted.");
     }
 
-    setFiles(validFiles);
+    // setFiles(validFiles);
     setIsUploading(true);
 
     const interval = setInterval(() => {
@@ -152,19 +152,20 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
             const reader = new FileReader();
             reader.onprogress = (event) => {
               if (event.lengthComputable) {
-                const percentLoaded = Math.round(
-                  (event.loaded / event.total) * 100
-                );
+                // const percentLoaded = Math.round(
+                //   (event.loaded / event.total) * 100
+                // );
                 // setProgress(percentLoaded);
               }
             };
             reader.onload = (event) => {
               const data = new Uint8Array(event.target!.result as ArrayBuffer);
-              const workbook: WorkBook = read(data, { type: "array" });
-              const sheetName = workbook.SheetNames[0];
-              const worksheet = workbook.Sheets[sheetName];
-              const jsonData = utils.sheet_to_json<IEmployees>(worksheet);
-              const newData: IEmployees[] = [...employees, ...jsonData];
+              console.log(data);
+              // const workbook: WorkBook = read(data, { type: "array" });
+              // const sheetName = workbook.SheetNames[0];
+              // const worksheet = workbook.Sheets[sheetName];
+              // const jsonData = utils.sheet_to_json<IEmployees>(worksheet);
+              // const newData: IEmployees[] = [...employees, ...jsonData];
               // setEmployees(newData);
             };
             reader.readAsArrayBuffer(file);
