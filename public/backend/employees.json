@@ -1,0 +1,109 @@
+{
+  "data": [
+    {
+      "Employee_Id": "E001",
+      "Employee_Profile": "John Doe",
+      "Email": "john.doe@example.com",
+      "Role": "Senior Marketer",
+      "Status": "Active"
+    },
+    {
+      "Employee_Id": "E002",
+      "Employee_Profile": "Jane Smith",
+      "Email": "jane.smith@example.com",
+      "Role": "Lead Designer",
+      "Status": "Payroll Only"
+    },
+    {
+      "Employee_Id": "E003",
+      "Employee_Profile": "Michael Johnson",
+      "Email": "michael.johnson@example.com",
+      "Role": "Lead Growth",
+      "Status": "Invite Sent"
+    },
+    {
+      "Employee_Id": "E004",
+      "Employee_Profile": "Emily Davis",
+      "Email": "emily.davis@example.com",
+      "Role": "Product Designer",
+      "Status": "Active"
+    },
+    {
+      "Employee_Id": "E005",
+      "Employee_Profile": "David Wilson",
+      "Email": "david.wilson@example.com",
+      "Role": "HR",
+      "Status": "Payroll Only"
+    },
+    {
+      "Employee_Id": "E006",
+      "Employee_Profile": "Sarah Brown",
+      "Email": "sarah.brown@example.com",
+      "Role": "Senior Marketer",
+      "Status": "Invite Sent"
+    },
+    {
+      "Employee_Id": "E007",
+      "Employee_Profile": "James Taylor",
+      "Email": "james.taylor@example.com",
+      "Role": "Lead Designer",
+      "Status": "Active"
+    },
+    {
+      "Employee_Id": "E008",
+      "Employee_Profile": "Patricia Anderson",
+      "Email": "patricia.anderson@example.com",
+      "Role": "Lead Growth",
+      "Status": "Payroll Only"
+    },
+    {
+      "Employee_Id": "E009",
+      "Employee_Profile": "Robert Thomas",
+      "Email": "robert.thomas@example.com",
+      "Role": "Product Designer",
+      "Status": "Invite Sent"
+    },
+    {
+      "Employee_Id": "E010",
+      "Employee_Profile": "Linda Jackson",
+      "Email": "linda.jackson@example.com",
+      "Role": "HR",
+      "Status": "Active"
+    },
+    {
+      "Employee_Id": "E011",
+      "Employee_Profile": "Christopher White",
+      "Email": "christopher.white@example.com",
+      "Role": "Senior Marketer",
+      "Status": "Payroll Only"
+    },
+    {
+      "Employee_Id": "E012",
+      "Employee_Profile": "Barbara Harris",
+      "Email": "barbara.harris@example.com",
+      "Role": "Lead Designer",
+      "Status": "Invite Sent"
+    },
+    {
+      "Employee_Id": "E013",
+      "Employee_Profile": "Daniel Martin",
+      "Email": "daniel.martin@example.com",
+      "Role": "Lead Growth",
+      "Status": "Active"
+    },
+    {
+      "Employee_Id": "E014",
+      "Employee_Profile": "Elizabeth Thompson",
+      "Email": "elizabeth.thompson@example.com",
+      "Role": "Product Designer",
+      "Status": "Payroll Only"
+    },
+    {
+      "Employee_Id": "E015",
+      "Employee_Profile": "Matthew Garcia",
+      "Email": "matthew.garcia@example.com",
+      "Role": "HR",
+      "Status": "Invite Sent"
+    }
+  ]
+}

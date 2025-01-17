@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import { Toaster } from "react-hot-toast";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -9,6 +10,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { EmployeesPage } from "./pages/index.ts";
+import { CoreProvider } from "./context/core-context.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +23,9 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CoreProvider>
+      <Toaster toastOptions={{ style: { fontSize: 14 } }} />
+      <RouterProvider router={router} />
+    </CoreProvider>
   </StrictMode>
 );

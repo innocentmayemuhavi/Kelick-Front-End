@@ -4,6 +4,7 @@ import Avatar from "../avatar";
 const StyledProfileNav = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: var(--spacing-6);
   padding: var(--spacing-6) var(--spacing-8);
   .profile-nav-info {

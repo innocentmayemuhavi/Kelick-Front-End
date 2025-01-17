@@ -7,6 +7,8 @@ const StyledHeader = styled.header`
   font-weight: 700;
   font-size: 30px;
   border-bottom: 1px solid var(--border-mideum);
+  position: sticky;
+  top: 0;
 `;
 
 const Header = () => {

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import SideBar from "../components/sidebar";
 import Header from "../components/header";
+import { useContext } from "react";
+import { CoreContext } from "../context/core-context";
+import { LineLoader } from "../components/lineloader";
+import { useWindowSize } from "../utils";
 
 const StyledLayout = styled.section`
   background-color: var(--main-bg);
@@ -54,27 +58,24 @@ const Layout = ({
   children: React.ReactNode;
   className?: string;
 }) => {
+  const { loading } = useContext(CoreContext);
   return (
     <>
       <StyledLayout>
-        <section className={`layout  `}>
-          <SideBar />
-          {/* <SideBar />
-
-          {showSideBar && useWindowWidth() <= 767 && (
-            <Overlay
-              onClicked={() => {
-                setShowSideBar(false);
-              }}
-            >
-              <SideBar />
-            </Overlay>
-          )} */}
-          <section className="layout-content">
-            <Header />
-            {children}
+        {useWindowSize().width <= 760 ? (
+          <div className="w-full h-[100vh] flex items-center  justify-center  font-[900]">
+            Sorry,App not optimised for Mobile phones!
+          </div>
+        ) : (
+          <section className={`layout   `}>
+            {loading && <LineLoader />}
+            <SideBar />
+            <section className="layout-content">
+              <Header />
+              {children}
+            </section>
           </section>
-        </section>
+        )}
       </StyledLayout>
     </>
   );

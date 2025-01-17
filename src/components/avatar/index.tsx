@@ -4,8 +4,10 @@ import checkers from "../../assets/images/checkers.png";
 const StyledAvatar = styled.div<{
   size?: string;
 }>`
-  height: ${(props) => props.size ?? "32px"};
-  width: ${(props) => props.size ?? "32px"};
+  height: 32px;
+  width: 32px;
+  min-height: 32px;
+  min-width: 32px;
   border-radius: 50%;
   display: flex;
   justify-content: center;

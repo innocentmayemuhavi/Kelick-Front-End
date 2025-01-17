@@ -17,16 +17,19 @@ const StyledSideBar = styled.aside`
   height: 100vh;
   padding: 16px;
   border-right: 1px solid var(--border-light);
+  transition: 0.1s;
   .menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     &-first {
+      overflow-y: auto;
       flex-direction: column;
       display: flex;
       gap: 20px;
       &-logo {
+        background-color: var(--white);
         height: 50px;
         display: flex;
         justify-content: flex-start;
@@ -34,7 +37,8 @@ const StyledSideBar = styled.aside`
         padding: 0 20px;
         flex-direction: row;
         gap: 10px;
-
+        position: sticky;
+        top: 0;
         font-weight: 700;
         color: var(--gray-700);
       }
@@ -48,13 +52,15 @@ const StyledSideBar = styled.aside`
       gap: 10px;
       &-plan {
         border-top: 1px solid var(--gray-100);
-
         display: flex;
         flex-direction: column;
         gap: var(--spacing-5);
-        .menu-bottom-plan-employees {
+        &-employees {
           padding: var(--spacing-6) var(--spacing-8);
           font-size: 12px;
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-5);
           color: var(--tex-primary);
           font-weight: 500;
         }
@@ -209,7 +215,12 @@ const SideBar = () => {
               <img src={freePlan} alt="Free Plan" />
               Free Plan
             </StyledMenuItem>
-            <div className="menu-bottom-plan-employees">1/10 Employees</div>
+            <div className="menu-bottom-plan-employees">
+              1/10 Employees{" "}
+              <div className="w-full bg-gray-100 rounded-full h-[4px] ">
+                <div className="bg-[var(--button-primary-bg)] h-[4px] rounded-full w-[10%]"></div>
+              </div>
+            </div>
           </div>
           <div className="menu-bottom-notification">
             <StyledMenuItem isActive={false} disabled={false}>
