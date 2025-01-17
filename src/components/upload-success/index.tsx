@@ -34,10 +34,6 @@ const StyledSuccessModal = styled.div`
       }
     }
     &-buttons {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      justify-content: center;
     }
   }
 `;
@@ -53,7 +49,7 @@ const AddSuccessModal = ({ isOpen, onClose }: AddSuccessModalProps) => {
           <div>Congrats! You've successfully added all your employees</div>
           <p>Would you like to generate payroll?</p>
         </div>
-        <div className="modal-buttons">
+        <div className=" gap-[var(--spacing-12)] flex flex-row justify-center items-center w-full">
           <SecondaryButton onClick={onClose}>I'll do it later</SecondaryButton>
           <PrimaryButton>Generate payroll </PrimaryButton>
         </div>

@@ -12,13 +12,17 @@
   --main-bg: #f9fcfc;
   --white: rgba(255, 255, 255, 1);
   --gray-100: rgba(242, 245, 245, 1);
+  --gray-200: rgba(179, 190, 190, 1);
   --gray-300: rgba(122, 132, 132, 1);
   --gray-400: rgba(95, 105, 105, 1);
   --gray-700: rgba(46, 51, 51, 1);
   --gray-900: rgba(24, 27, 27, 1);
 
   --purple-100: rgba(242, 229, 255, 1);
+  --purple-400: rgba(183, 116, 252, 1);
   --purple-600: rgba(131, 24, 231, 1);
+
+  --yellow-400: rgba(250, 201, 5, 1);
 
   --menu-item-active-bg: rgba(242, 245, 245, 1);
   --menu-item-boarder: rgba(179, 190, 190, 1);
@@ -48,7 +52,7 @@
 
   --radi-0: 0px;
   --radi-1: 4px;
-  --radi-2: 8px;
+  --radi-2: 4px;
   --radi-3: 12px;
   --radi-4: 16px;
   --radi-5: 8px;

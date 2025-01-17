@@ -176,7 +176,7 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
               const newData = employees.concat(res as IEmployees[]);
               setEmployees(newData);
               console.log(newData);
-              toast.success("Employees sucessfully added", {
+              toast.success("Employees successfully added", {
                 position: "bottom-center",
                 icon: <img src={success} alt="success icon" />,
               });
@@ -236,7 +236,10 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
         {showSuccess ? (
           <AddSuccessModal
             isOpen={showSuccess}
-            onClose={async () => setShowSuccess(false)}
+            onClose={async () => {
+              setShowSuccess(false);
+              toogleShow();
+            }}
           ></AddSuccessModal>
         ) : isUploading ? (
           <FileUploading progress={progress} />
