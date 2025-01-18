@@ -15,6 +15,7 @@ import { IEmployees } from "../../models";
 import { FileUploading } from "../upload_loading";
 import AddSuccessModal from "../upload-success";
 import Confetti from "react-confetti";
+import { WorkBook, read, utils } from "xlsx";
 
 // import { useWindowSize } from "react-use";
 
@@ -136,7 +137,6 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
       toast.error("Some files were too large and were not accepted.");
     }
 
-    // setFiles(validFiles);
     setIsUploading(true);
 
     const interval = setInterval(() => {
@@ -144,7 +144,6 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
         if (prev >= 70) {
           setLoading(true);
         }
-
         if (prev >= 100) {
           clearInterval(interval);
           setIsUploading(false);
@@ -152,39 +151,44 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
             const reader = new FileReader();
             reader.onprogress = (event) => {
               if (event.lengthComputable) {
-                // const percentLoaded = Math.round(
-                //   (event.loaded / event.total) * 100
-                // );
-                // setProgress(percentLoaded);
               }
             };
             reader.onload = (event) => {
               const data = new Uint8Array(event.target!.result as ArrayBuffer);
-              console.log(data);
-              // const workbook: WorkBook = read(data, { type: "array" });
-              // const sheetName = workbook.SheetNames[0];
-              // const worksheet = workbook.Sheets[sheetName];
-              // const jsonData = utils.sheet_to_json<IEmployees>(worksheet);
-              // const newData: IEmployees[] = [...employees, ...jsonData];
-              // setEmployees(newData);
+              const workbook: WorkBook = read(data, { type: "array" });
+              const sheetName = workbook.SheetNames[0];
+              const worksheet = workbook.Sheets[sheetName];
+              const jsonData = utils.sheet_to_json<IEmployees>(worksheet);
+
+              if (jsonData.length > 1) {
+                getEmployees()
+                  .then((res) => {
+                    const newData = employees.concat(
+                      jsonData,
+                      res as IEmployees[]
+                    );
+                    setEmployees(newData);
+                    toast.success("Employees successfully added", {
+                      position: "bottom-center",
+                      icon: <img src={success} alt="success icon" />,
+                    });
+                    setLoading(false);
+                    setShowSuccess(true);
+                  })
+                  .catch((_) => setLoading(false));
+              } else {
+                toast.error(
+                  "The document is empty or has no valid data. add atleast 2 entries",
+                  {
+                    position: "bottom-center",
+                  }
+                );
+                setLoading(false);
+              }
+              setProgress(0);
             };
             reader.readAsArrayBuffer(file);
           });
-
-          getEmployees()
-            .then((res) => {
-              const newData = employees.concat(res as IEmployees[]);
-              setEmployees(newData);
-              console.log(newData);
-              toast.success("Employees successfully added", {
-                position: "bottom-center",
-                icon: <img src={success} alt="success icon" />,
-              });
-              setLoading(false);
-              setShowSuccess(true);
-            })
-            .catch((_) => setLoading(false));
-          setProgress(0);
 
           return 100;
         }
@@ -207,7 +211,7 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
       setLoading(true);
       const templateData = [
         {
-          Employee_ID: "",
+          Employee_Id: "",
           Employee_Profile: "",
           Email: "",
           Role: "",
@@ -219,8 +223,8 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
         `employees template-${new Date().toISOString()}.xlsx`
       );
       setLoading(false);
-      setShowSuccess(true);
-      toast.success("Template generated", {
+
+      toast.success("Template generated successfully", {
         position: "bottom-center",
         icon: <img src={success} alt="download icon" />,
       });

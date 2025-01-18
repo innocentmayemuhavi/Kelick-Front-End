@@ -19,6 +19,7 @@ import {
   EmploymentTypeStats,
   NationalityStats,
 } from "../../components/stats";
+import { IEmployees } from "../../models";
 
 const StyledEmployeesPage = styled.main`
   padding: 20px;
@@ -66,7 +67,7 @@ const StyledEmployeesPage = styled.main`
 `;
 
 const EmployeesPage = () => {
-  const { loading, employees } = useContext(CoreContext);
+  const { loading, employees, setEmployees } = useContext(CoreContext);
   const [showUpload, setShowUpload] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
 
@@ -81,7 +82,6 @@ const EmployeesPage = () => {
                 setIsFetching((prev) => prev);
               }}
             />
-            {/* <SideBar /> */}
           </Overlay>
         )}
         {isFetching || loading ? (
@@ -114,7 +114,7 @@ const EmployeesPage = () => {
                     className="outline-none bg-transparent w-full"
                   />
                 </div>
-                <div className="border-1   flex items-center gap-2 rounded-[var(--radi-6)] bg-[var(--button-secondary-bg)] px-[var(--spacing-7)] py-2 h-full  border-1 border-[var(--button-primary-bg)] cursor-pointer">
+                <div className="border-1  flex items-center gap-2 rounded-[var(--radi-6)] bg-[var(--button-secondary-bg)] px-[var(--spacing-7)] py-2 h-full  border-1 border cursor-pointer">
                   All Status <img src={arrow} />
                 </div>
                 <div className="border-1  flex items-center gap-2 rounded-[var(--radi-6)] bg-[var(--button-secondary-bg)] px-[var(--spacing-7)] py-2 h-full  border-1 border cursor-pointer">
