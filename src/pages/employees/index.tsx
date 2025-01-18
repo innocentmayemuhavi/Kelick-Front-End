@@ -19,7 +19,6 @@ import {
   EmploymentTypeStats,
   NationalityStats,
 } from "../../components/stats";
-import { IEmployees } from "../../models";
 
 const StyledEmployeesPage = styled.main`
   padding: 20px;
@@ -67,7 +66,7 @@ const StyledEmployeesPage = styled.main`
 `;
 
 const EmployeesPage = () => {
-  const { loading, employees, setEmployees } = useContext(CoreContext);
+  const { loading, employees } = useContext(CoreContext);
   const [showUpload, setShowUpload] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
 
