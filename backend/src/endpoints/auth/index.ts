@@ -51,5 +51,5 @@ export const authenticateJWT = async (
     return next(error);
   }
 };
-export const authRouter = Router();
-authRouter.post("/generate-token", generateFirebaseAccessToken);
+export const generateAccessTokenRoute = Router();
+generateAccessTokenRoute.get("/", generateFirebaseAccessToken);

@@ -14,11 +14,15 @@ const validateGetEmployees = (req: Request, res: Response) => {
 };
 
 export const getEmployees = async (req: Request, res: Response) => {
-  await validateGetEmployees(req, res);
+  const validationError = validateGetEmployees(req, res);
+  if (validationError) {
+    return;
+  }
+
   const { page, limit, year } = req.query;
-  res.json({ page, limit, year });
-  return res.json({ message: "success", data: [] });
+  res.json({ message: "success", data: { page, limit, year } });
 };
+
 export const employeesRouter = Router();
 
-employeesRouter.get("/employees", getEmployees);
+employeesRouter.get("/", getEmployees);

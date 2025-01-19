@@ -1,2 +1,2 @@
 export { employeesRouter } from "./employees";
-export { authRouter } from "./auth";
+export { generateAccessTokenRoute } from "./auth";
