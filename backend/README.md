@@ -1,6 +1,6 @@
 ## Setup and Integration Strategy
 
-To successfully integrate an Express backend with a Next.js frontend and connect to the IRAS Portal, we need to map out the necessary steps and integration strategy. Below are the detailed steps and deliverables expected:
+Bellow are the steps to initialize and intergrate back end with front end
 
 ### 1. API Integration Strategy
 

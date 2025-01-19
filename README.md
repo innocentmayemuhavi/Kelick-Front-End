@@ -1,145 +1,27 @@
-## Setup and Integration Strategy
+# React + TypeScript + Vite
 
-To successfully integrate an Express backend with a Next.js frontend and connect to the IRAS Portal, we need to map out the necessary steps and integration strategy. Below are the detailed steps and deliverables expected:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### 1. API Integration Strategy
+## Setup Instructions
 
-#### Seamless IRAS Portal Connection Methods
+### 1. Install Dependencies
 
-- **API Endpoints**: Identify the IRAS Portal API endpoints required for integration.
-- **HTTP Methods**: Determine the HTTP methods (GET, POST, etc.) needed for each endpoint.
-- **Data Format**: Ensure the data format (JSON, XML, etc.) is compatible with the IRAS Portal.
+First, install the necessary dependencies:
 
-#### Secure Authentication Approach
-
-- **OAuth 2.0**: Implement OAuth 2.0 for secure authentication with the IRAS Portal and Firebase authentication.
-- **Token Management**: Securely store and manage access tokens using JWT and access tokens.
-- **Environment Variables**: Use environment variables to store sensitive information like client ID and client secret.
-
-### 2. Backend Infrastructure
-
-#### Robust Database Design
-
-- **Database Choice**: Use Firebase Firestore for structured data.
-- **Schema Design**: Design a schema that includes collections for users, transactions, and logs.
-- **ORM**: Use Firebase Admin SDK for database interactions.
-
-#### Data Protection Strategies
-
-- **Encryption**: Encrypt sensitive data both at rest and in transit.
-- **Access Control**: Implement role-based access control (RBAC) to restrict access to sensitive data.
-- **Backups**: Regularly backup the database to prevent data loss.
-
-### 3. Tech Stack
-
-#### Recommended Frameworks
-
-- **Frontend**: Next.js for server-side rendering and React for the frontend.
-- **Backend**: Express.js for the backend API.
-- **Database**: Firebase Firestore.
-- **Authentication**: Passport.js for authentication.
-
-#### Performance Optimization Techniques
-
-- **Caching**: Use caching mechanisms like Redis to reduce database load.
-- **Load Balancing**: Implement load balancing to distribute traffic evenly.
-- **Code Splitting**: Use code splitting in Next.js to improve frontend performance.
-
-### 4. Implementation Roadmap
-
-#### Project Phasing
-
-**Phase 1: Setup and Configuration**
-
-- Set up Next.js and Express.js projects.
-- Configure Firebase Firestore.
-- Implement basic authentication.
-
-**Phase 2: API Integration**
-
-- Integrate with IRAS Portal API.
-- Implement secure authentication with OAuth 2.0.
-- Develop API endpoints for frontend interaction.
-
-**Phase 3: Frontend Development**
-
-- Develop frontend components in Next.js.
-- Implement data fetching from the backend.
-- Ensure secure data handling.
-
-**Phase 4: Testing and Optimization**
-
-- Perform unit and integration testing.
-- Optimize performance and security.
-- Conduct user acceptance testing (UAT).
-
-#### Realistic Timeline with Key Milestones
-
-- **Week 1-2**: Setup and Configuration
-- **Week 3-4**: API Integration
-- **Week 5-6**: Frontend Development
-- **Week 7-8**: Testing and Optimization
-
-### Deliverables Expected
-
-#### Architectural Diagram
-
-![Architectural Diagram](https://via.placeholder.com/800x400?text=Architectural+Diagram)
-
-#### Tech Stack Justification
-
-- **Next.js**: Provides server-side rendering for better SEO and performance.
-- **Express.js**: Lightweight and flexible for building APIs.
-- **Firebase Firestore**: Scalable and flexible NoSQL cloud database.
-- **Passport.js**: Comprehensive authentication middleware.
-
-#### Implementation Timeline
-
-- **Week 1-2**: Setup and Configuration
-  - Set up Next.js and Express.js projects.
-  - Configure Firebase Firestore.
-  - Implement basic authentication.
-- **Week 3-4**: API Integration
-  - Integrate with IRAS Portal API.
-  - Implement secure authentication with OAuth 2.0.
-  - Develop API endpoints for frontend interaction.
-- **Week 5-6**: Frontend Development
-  - Develop frontend components in Next.js.
-  - Implement data fetching from the backend.
-  - Ensure secure data handling.
-- **Week 7-8**: Testing and Optimization
-  - Perform unit and integration testing.
-  - Optimize performance and security.
-  - Conduct user acceptance testing (UAT).
-
-#### Proof of Concept Code
-
-**Express Backend Setup**:
-
-```typescript
-run cd backend if not in backend repo already
-run npm i
-
-run npm run dev
-
-it will run on port 4000
-
-
-sample api calls
-
-on your browser
-
-http://localhost:4000/employees?page=1&limit=10&year=2023
-
-
-test api is http://localhost:4000/test
-
+```sh
+npm install
 ```
 
-**Next.js Frontend Setup**:
+### 2. Run the Development Server
 
-```javascript
-// ...existing code...
+To start the development server, run:
+
+```sh
+npm run dev
 ```
 
-This setup provides a comprehensive plan for integrating an Express backend with a Next.js frontend, connecting to the IRAS Portal, and ensuring secure and efficient data handling.
+The development server will run on the default port, typically 5173. You can access your application at `http://localhost:5173`.
+
+### Demo
+
+You can view a live demo of the project at [this Vercel link](https://kelick-front-end-task.vercel.app/).
