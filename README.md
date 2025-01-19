@@ -1,6 +1,6 @@
-# React + TypeScript + Vite
+# KELICK FRONT END TASK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get this project started.
 
 ## Setup Instructions
 
