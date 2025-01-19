@@ -1,6 +1,6 @@
 ## KELICK BACKEND TASK
 
-Bellow are the steps to initialize and intergrate back end with front end
+Below are the steps to initialize and integrate the backend with the frontend.
 
 ### 1. API Integration Strategy
 
@@ -75,10 +75,10 @@ Bellow are the steps to initialize and intergrate back end with front end
 
 #### Realistic Timeline with Key Milestones
 
-- **Week 1-2**: Setup and Configuration
-- **Week 3-4**: API Integration
-- **Week 5-6**: Frontend Development
-- **Week 7-8**: Testing and Optimization
+- **Month 1**: Setup and Configuration
+- **Month 2**: API Integration
+- **Month 3-4**: Frontend Development
+- **Month 5**: Testing and Optimization
 
 ### Deliverables Expected
 
@@ -95,19 +95,19 @@ Bellow are the steps to initialize and intergrate back end with front end
 
 #### Implementation Timeline
 
-- **Week 1-2**: Setup and Configuration
+- **Month 1**: Setup and Configuration
   - Set up Next.js and Express.js projects.
   - Configure Firebase Firestore.
   - Implement basic authentication.
-- **Week 3-4**: API Integration
+- **Month 2**: API Integration
   - Integrate with IRAS Portal API.
   - Implement secure authentication with OAuth 2.0.
   - Develop API endpoints for frontend interaction.
-- **Week 5-6**: Frontend Development
+- **Month 3-4**: Frontend Development
   - Develop frontend components in Next.js.
   - Implement data fetching from the backend.
   - Ensure secure data handling.
-- **Week 7-8**: Testing and Optimization
+- **Month 5**: Testing and Optimization
   - Perform unit and integration testing.
   - Optimize performance and security.
   - Conduct user acceptance testing (UAT).
@@ -134,12 +134,7 @@ http://localhost:4000/employees?page=1&limit=10&year=2023
 
 test api is http://localhost:4000/test
 
+
+
+This setup provides a comprehensive plan for integrating an Express backend with  Frontend, connecting to the IRAS Portal, and ensuring secure and efficient data handling.
 ```
-
-**Next.js Frontend Setup**:
-
-```javascript
-// ...existing code...
-```
-
-This setup provides a comprehensive plan for integrating an Express backend with a Next.js frontend, connecting to the IRAS Portal, and ensuring secure and efficient data handling.
