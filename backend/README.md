@@ -84,7 +84,7 @@ Below are the steps to initialize and integrate the backend with the frontend.
 
 #### Architectural Diagram
 
-![Architectural Diagram](https://drive.google.com/file/d/1D3zy0GrJnu_fcWS-2fhjFakjeylwUGP5/view?usp=sharing?text=Architectural+Diagram)
+![Architectural Diagram](https://drive.google.com/file/d/1D3zy0GrJnu_fcWS-2fhjFakjeylwUGP5/view?usp=sharing)
 
 #### Tech Stack Justification
 
@@ -134,4 +134,10 @@ http://localhost:4000/employees?page=1&limit=10&year=2023
 
 test api is http://localhost:4000/test
 
+```
+
+**Next.js Frontend Setup**:
+
+```javascript
+// ...existing code...
 ```
