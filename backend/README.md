@@ -84,7 +84,7 @@ Below are the steps to initialize and integrate the backend with the frontend.
 
 #### Architectural Diagram
 
--Diagram is at the root folder inside backend  named architectural diagram  or follow link [this Vercel link](https://drive.google.com/file/d/1D3zy0GrJnu_fcWS-2fhjFakjeylwUGP5/view?usp=sharing).
+-Diagram is at the root folder inside backend  named architectural diagram  or view it at [this Drive link](https://drive.google.com/file/d/1D3zy0GrJnu_fcWS-2fhjFakjeylwUGP5/view?usp=sharing).
 
 #### Tech Stack Justification
 
