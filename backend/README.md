@@ -135,9 +135,3 @@ http://localhost:4000/employees?page=1&limit=10&year=2023
 test api is http://localhost:4000/test
 
 ```
-
-**Next.js Frontend Setup**:
-
-```javascript
-// ...existing code...
-```
