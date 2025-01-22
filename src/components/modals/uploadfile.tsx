@@ -161,7 +161,7 @@ const UploadFiles = ({ toogleShow }: { toogleShow: () => void }) => {
               const jsonData = utils.sheet_to_json<IEmployees>(worksheet);
 
               if (jsonData.length > 1) {
-                getEmployees()
+                getEmployees("accessToken")
                   .then((res) => {
                     const newData = employees.concat(
                       jsonData,

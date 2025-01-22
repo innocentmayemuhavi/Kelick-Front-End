@@ -9,9 +9,13 @@ const generateFileFromData = (data: any[], filename: string) => {
   writeFile(wb, filename);
 };
 
-const getEmployees = () => {
+const getEmployees = (token: string) => {
   const res = axios
-    .get("./backend/employees.json")
+    .get("./backend/employees.json", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
     .then((res) => res.data.data as IEmployees[])
     .catch((_) => {
       toast.error("Am error occured...try again later");
